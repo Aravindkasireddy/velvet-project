@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Book The Velvet Lounge - Premium event space for corporate meetings, private celebrations, and exclusive gatherings. Luxury lounge rental with full-service amenities.">
+    <title>The Velvet Lounge - Luxury Event Space Booking</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="lounge-styles.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="brand-icon">✨</span>
+                <span class="brand-name">The Velvet Lounge</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#packages">Packages</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#booking">Book Now</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="cta-nav-btn" onclick="scrollToBooking()">Reserve Now</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-background"
+            style="background-image: url('images/lounge-hero.png');">
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">Premium Event Space</div>
+            <h1 class="hero-title">
+                <span class="title-line">Experience Elegance at</span>
+                <span class="title-line accent-text">The Velvet Lounge</span>
+            </h1>
+            <p class="hero-subtitle">
+                Your exclusive destination for corporate events, private celebrations, and sophisticated gatherings.
+            </p>
+            <div class="hero-cta">
+                <button class="primary-btn" onclick="scrollToBooking()">Book Your Event</button>
+                <button class="secondary-btn" onclick="scrollToGallery()">View Gallery</button>
+            </div>
+            <div class="hero-features">
+                <div class="feature-item">
+                    <span class="feature-icon">🏆</span>
+                    <span class="feature-text">Premium Service</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🥂</span>
+                    <span class="feature-text">Full Bar</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">📺</span>
+                    <span class="feature-text">AV Equipment</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">⭐</span>
+                    <span class="feature-text">5-Star Rated</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll to Explore</span>
+            <div class="scroll-arrow">↓</div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Welcome to Luxury</h2>
+                <p class="section-subtitle">Where every event becomes an unforgettable experience</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-intro">
+                        The Velvet Lounge is a premier event space designed for those who appreciate sophistication
+                        and exclusivity. Our meticulously curated environment combines modern elegance with timeless
+                        luxury, creating the perfect backdrop for your most important moments.
+                    </p>
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <span class="highlight-number">500+</span>
+                            <span class="highlight-label">Events Hosted</span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-number">2,500</span>
+                            <span class="highlight-label">Sq. Ft. Space</span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-number">100</span>
+                            <span class="highlight-label">Guest Capacity</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-subtitle">Tailored experiences for every occasion</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">💼</div>
+                    <h3>Corporate Events</h3>
+                    <p>Host impactful meetings, product launches, and team celebrations in a professional yet inviting
+                        atmosphere.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎉</div>
+                    <h3>Private Celebrations</h3>
+                    <p>From milestone birthdays to anniversaries, create lasting memories in our elegant space.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🤝</div>
+                    <h3>Networking Events</h3>
+                    <p>Connect with peers in style with our curated networking and social gathering packages.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎭</div>
+                    <h3>Exclusive Experiences</h3>
+                    <p>Wine tastings, art showcases, and intimate performances in a sophisticated setting.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Packages Section -->
+    <section class="pricing-section" id="packages">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Booking Packages</h2>
+                <p class="section-subtitle">Choose the perfect package for your event</p>
+            </div>
+            <div class="pricing-grid">
+                <!-- Hourly Package -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Hourly Rate</h3>
+                        <div class="pricing-amount">
+                            <span class="currency">$</span>
+                            <span class="price">150</span>
+                            <span class="period">/hour</span>
+                        </div>
+                        <p class="pricing-note">Minimum 2 hours</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✓ Standard seating area</li>
+                        <li>✓ High-speed WiFi</li>
+                        <li>✓ Basic refreshments</li>
+                        <li>✓ Climate control</li>
+                        <li>✓ Basic AV setup</li>
+                    </ul>
+                    <button class="pricing-btn" onclick="selectPackage('hourly', 150)">Select Package</button>
+                </div>
+
+                <!-- Half-Day Package -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Half-Day</h3>
+                        <div class="pricing-amount">
+                            <span class="currency">$</span>
+                            <span class="price">550</span>
+                            <span class="period">/4 hours</span>
+                        </div>
+                        <p class="pricing-note">Best value for meetings</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✓ Premium seating arrangement</li>
+                        <li>✓ Complimentary beverages</li>
+                        <li>✓ Full AV equipment</li>
+                        <li>✓ Dedicated event host</li>
+                        <li>✓ Light refreshments</li>
+                        <li>✓ Custom lighting</li>
+                    </ul>
+                    <button class="pricing-btn" onclick="selectPackage('halfday', 550)">Select Package</button>
+                </div>
+
+                <!-- Full-Day Package -->
+                <div class="pricing-card featured">
+                    <div class="featured-badge">Most Popular</div>
+                    <div class="pricing-header">
+                        <h3>Full-Day</h3>
+                        <div class="pricing-amount">
+                            <span class="currency">$</span>
+                            <span class="price">950</span>
+                            <span class="period">/8 hours</span>
+                        </div>
+                        <p class="pricing-note">Complete event solution</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✓ Exclusive full-day access</li>
+                        <li>✓ Premium bar service</li>
+                        <li>✓ Catering options available</li>
+                        <li>✓ Event planning support</li>
+                        <li>✓ Complete AV package</li>
+                        <li>✓ Setup & breakdown assistance</li>
+                        <li>✓ Custom décor options</li>
+                    </ul>
+                    <button class="pricing-btn featured-btn" onclick="selectPackage('fullday', 950)">Select
+                        Package</button>
+                </div>
+
+                <!-- VIP Premium Package -->
+                <div class="pricing-card premium">
+                    <div class="premium-badge">✨ VIP Premium</div>
+                    <div class="pricing-header">
+                        <h3>VIP Experience</h3>
+                        <div class="pricing-amount">
+                            <span class="currency">$</span>
+                            <span class="price">1,500</span>
+                            <span class="period">/full day</span>
+                        </div>
+                        <p class="pricing-note">Ultimate luxury package</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✓ Private VIP section access</li>
+                        <li>✓ Personal event concierge</li>
+                        <li>✓ Premium catering included</li>
+                        <li>✓ Professional photography</li>
+                        <li>✓ Custom lighting & music</li>
+                        <li>✓ Valet parking service</li>
+                        <li>✓ Champagne reception</li>
+                        <li>✓ Priority booking for future events</li>
+                    </ul>
+                    <button class="pricing-btn premium-btn" onclick="selectPackage('vip', 1500)">Select Package</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Space</h2>
+                <p class="section-subtitle">Take a virtual tour of The Velvet Lounge</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="images/lounge-hero.png"
+                        alt="Main Lounge Area">
+                    <div class="gallery-overlay">
+                        <span class="gallery-title">Main Lounge</span>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="images/lounge-vip.png"
+                        alt="VIP Section">
+                    <div class="gallery-overlay">
+                        <span class="gallery-title">VIP Section</span>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="images/lounge-event.png"
+                        alt="Event Setup">
+                    <div class="gallery-overlay">
+                        <span class="gallery-title">Event Configuration</span>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="images/amenities-bar.png"
+                        alt="Premium Bar">
+                    <div class="gallery-overlay">
+                        <span class="gallery-title">Premium Bar</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="Gallery Image">
+        <div class="lightbox-nav">
+            <button class="lightbox-prev" onclick="changeLightboxImage(-1); event.stopPropagation();">‹</button>
+            <button class="lightbox-next" onclick="changeLightboxImage(1); event.stopPropagation();">›</button>
+        </div>
+    </div>
+
+    <!-- Amenities Section -->
+    <section class="amenities-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Premium Amenities</h2>
+                <p class="section-subtitle">Everything you need for a perfect event</p>
+            </div>
+            <div class="amenities-grid">
+                <div class="amenity-item">
+                    <span class="amenity-icon">🍷</span>
+                    <h4>Premium Bar Service</h4>
+                    <p>Full-service bar with premium spirits and craft cocktails</p>
+                </div>
+                <div class="amenity-item">
+                    <span class="amenity-icon">🎵</span>
+                    <h4>Sound & Entertainment</h4>
+                    <p>Professional sound system and customizable music</p>
+                </div>
+                <div class="amenity-item">
+                    <span class="amenity-icon">📺</span>
+                    <h4>AV Equipment</h4>
+                    <p>Large screens, projectors, and presentation tools</p>
+                </div>
+                <div class="amenity-item">
+                    <span class="amenity-icon">🌐</span>
+                    <h4>High-Speed WiFi</h4>
+                    <p>Reliable internet connectivity throughout the space</p>
+                </div>
+                <div class="amenity-item">
+                    <span class="amenity-icon">❄️</span>
+                    <h4>Climate Control</h4>
+                    <p>Perfect temperature year-round for comfort</p>
+                </div>
+                <div class="amenity-item">
+                    <span class="amenity-icon">🚗</span>
+                    <h4>Valet Parking</h4>
+                    <p>Complimentary valet service for VIP packages</p>
+                </div>
+                <div class="amenity-item">
+                    <span class="amenity-icon">🍽️</span>
+                    <h4>Catering Options</h4>
+                    <p>Partner with top local caterers for any cuisine</p>
+                </div>
+                <div class="amenity-item">
+                    <span class="amenity-icon">🎉</span>
+                    <h4>Event Planning</h4>
+                    <p>Professional event coordination and support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form Section -->
+    <section class="booking-section" id="booking">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Reserve Your Space</h2>
+                <p class="section-subtitle">Complete the form below and we'll confirm your booking within 24 hours</p>
+            </div>
+            <div class="booking-container">
+                <form id="bookingForm" class="booking-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" name="fullName" required placeholder="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required placeholder="john@example.com">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="(555) 123-4567">
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company/Organization</label>
+                            <input type="text" id="company" name="company" placeholder="Your Company Name">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="eventDate">Event Date *</label>
+                            <input type="date" id="eventDate" name="eventDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="eventTime">Start Time *</label>
+                            <input type="time" id="eventTime" name="eventTime" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="package">Select Package *</label>
+                            <select id="package" name="package" required>
+                                <option value="">Choose a package...</option>
+                                <option value="hourly">Hourly Rate - $150/hour</option>
+                                <option value="halfday">Half-Day - $550 (4 hours)</option>
+                                <option value="fullday">Full-Day - $950 (8 hours)</option>
+                                <option value="vip">VIP Premium - $1,500 (Full day)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="guestCount">Number of Guests *</label>
+                            <input type="number" id="guestCount" name="guestCount" required min="1" max="100"
+                                placeholder="25">
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="eventType">Event Type *</label>
+                        <select id="eventType" name="eventType" required>
+                            <option value="">Select event type...</option>
+                            <option value="corporate">Corporate Meeting</option>
+                            <option value="celebration">Private Celebration</option>
+                            <option value="networking">Networking Event</option>
+                            <option value="wedding">Wedding/Reception</option>
+                            <option value="birthday">Birthday Party</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="specialRequests">Special Requests or Requirements</label>
+                        <textarea id="specialRequests" name="specialRequests" rows="4"
+                            placeholder="Please let us know about any special accommodations, dietary restrictions, AV needs, or other requests..."></textarea>
+                    </div>
+
+                    <div class="price-summary">
+                        <div class="summary-row">
+                            <span>Selected Package:</span>
+                            <span id="summaryPackage">-</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Number of Guests:</span>
+                            <span id="summaryGuests">-</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Estimated Total:</span>
+                            <span id="summaryTotal">$0</span>
+                        </div>
+                        <p class="summary-note">*Final price may vary based on additional services and requirements</p>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Submit Booking Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What Our Clients Say</h2>
+                <p class="section-subtitle">Real experiences from real events</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "The Velvet Lounge exceeded all our expectations for our corporate retreat. The space is
+                        stunning and the service was impeccable. Our team was thoroughly impressed!"
+                    </p>
+                    <div class="testimonial-author">
+                        <strong>Sarah Johnson</strong>
+                        <span>CEO, TechVision Inc.</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "We hosted my wife's milestone birthday here and it was absolutely perfect. The VIP package
+                        made the night truly special. Highly recommend for any celebration!"
+                    </p>
+                    <div class="testimonial-author">
+                        <strong>Michael Chen</strong>
+                        <span>Private Event</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "Outstanding venue for our product launch. The AV equipment was top-notch and the event
+                        staff was incredibly professional. Will definitely book again!"
+                    </p>
+                    <div class="testimonial-author">
+                        <strong>David Martinez</strong>
+                        <span>Marketing Director, Innovate Solutions</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get in Touch</h2>
+                <p class="section-subtitle">We're here to help plan your perfect event</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <div>
+                            <strong>Address</strong>
+                            <p>123 Luxury Boulevard<br>Downtown District, NY 10001</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📞</span>
+                        <div>
+                            <strong>Phone</strong>
+                            <p>(555) 789-1234</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">✉️</span>
+                        <div>
+                            <strong>Email</strong>
+                            <p>reservations@velvetlounge.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">🕐</span>
+                        <div>
+                            <strong>Hours</strong>
+                            <p>Monday - Sunday: 10 AM - 2 AM<br>Bookings available 24/7</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link">📘 Facebook</a>
+                        <a href="#" class="social-link">📷 Instagram</a>
+                        <a href="#" class="social-link">🐦 Twitter</a>
+                        <a href="#" class="social-link">💼 LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>✨ The Velvet Lounge</h3>
+                    <p>Where luxury meets celebration</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="#packages">Packages</a>
+                    <a href="#gallery">Gallery</a>
+                    <a href="#booking">Book Now</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-legal">
+                    <p>&copy; 2026 The Velvet Lounge. All rights reserved.</p>
+                    <div class="legal-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Cancellation Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Booking Confirmation Modal -->
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <div class="modal-icon">✓</div>
+            <h2>Booking Request Received!</h2>
+            <p class="modal-text">
+                Thank you for choosing The Velvet Lounge. We've received your booking request and will
+                contact you within 24 hours to confirm your reservation.
+            </p>
+            <div class="modal-details">
+                <p><strong>Confirmation Number:</strong> <span id="confirmationNumber"></span></p>
+                <p>Check your email for a detailed summary of your request.</p>
+            </div>
+            <button onclick="closeModal()" class="modal-btn">Close</button>
+        </div>
+    </div>
+
+    <script src="lounge-booking.js"></script>
+</body>
+
+</html>
