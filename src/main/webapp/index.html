@@ -12,6 +12,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500&display=swap"
         rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="lounge-styles.css">
 </head>
 
@@ -37,23 +39,31 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-overlay"></div>
-        <div class="hero-background" style="background-image: url('images/lounge-hero.png');">
+        <div class="hero-background parallax-bg" style="background-image: url('images/lounge-hero.png');">
+        </div>
+        <!-- Floating Particles -->
+        <div class="particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
         </div>
         <div class="hero-content">
-            <div class="hero-badge">🚀 DEPLOYED VIA JENKINS CI/CD - v2.0</div>
+            <div class="hero-badge" data-aos="fade-down">✨ Premium Event Space</div>
             <h1 class="hero-title">
-                <span class="title-line">🎉 Automated Deployment Success!</span>
-                <span class="title-line accent-text">The Velvet Lounge - v2.0</span>
+                <span class="title-line" data-aos="fade-up" data-aos-delay="100">Experience Elegance at</span>
+                <span class="title-line accent-text gradient-animate" data-aos="fade-up" data-aos-delay="200">The Velvet
+                    Lounge</span>
             </h1>
-            <p class="hero-subtitle">
-                ✨ Jenkins Pipeline Deployed Successfully! Your exclusive destination for corporate events, private
-                celebrations, and sophisticated gatherings.
+            <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="300">
+                Your exclusive destination for corporate events, private celebrations, and sophisticated gatherings.
             </p>
-            <div class="hero-cta">
-                <button class="primary-btn" onclick="scrollToBooking()">Book Your Event</button>
+            <div class="hero-cta" data-aos="fade-up" data-aos-delay="400">
+                <button class="primary-btn btn-glow" onclick="scrollToBooking()">Book Your Event</button>
                 <button class="secondary-btn" onclick="scrollToGallery()">View Gallery</button>
             </div>
-            <div class="hero-features">
+            <div class="hero-features" data-aos="fade-up" data-aos-delay="500">
                 <div class="feature-item">
                     <span class="feature-icon">🏆</span>
                     <span class="feature-text">Premium Service</span>
@@ -81,29 +91,29 @@
     <!-- About Section -->
     <section class="about-section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Welcome to Luxury - Build #001</h2>
-                <p class="section-subtitle">🔄 Continuous Deployment Active | Where every event becomes an unforgettable
-                    experience</p>
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Welcome to Luxury</h2>
+                <p class="section-subtitle">Where every event becomes an unforgettable experience</p>
             </div>
             <div class="about-content">
-                <div class="about-text">
+                <div class="about-text" data-aos="fade-up" data-aos-delay="100">
                     <p class="about-intro">
                         The Velvet Lounge is a premier event space designed for those who appreciate sophistication
                         and exclusivity. Our meticulously curated environment combines modern elegance with timeless
                         luxury, creating the perfect backdrop for your most important moments.
                     </p>
                     <div class="about-highlights">
-                        <div class="highlight-item">
-                            <span class="highlight-number">500+</span>
+                        <div class="highlight-item" data-aos="zoom-in" data-aos-delay="200">
+                            <span class="highlight-number count-up" data-count="500">0</span><span
+                                class="highlight-plus">+</span>
                             <span class="highlight-label">Events Hosted</span>
                         </div>
-                        <div class="highlight-item">
-                            <span class="highlight-number">2,500</span>
+                        <div class="highlight-item" data-aos="zoom-in" data-aos-delay="300">
+                            <span class="highlight-number count-up" data-count="2500">0</span>
                             <span class="highlight-label">Sq. Ft. Space</span>
                         </div>
-                        <div class="highlight-item">
-                            <span class="highlight-number">100</span>
+                        <div class="highlight-item" data-aos="zoom-in" data-aos-delay="400">
+                            <span class="highlight-number count-up" data-count="100">0</span>
                             <span class="highlight-label">Guest Capacity</span>
                         </div>
                     </div>
@@ -586,6 +596,8 @@
         </div>
     </div>
 
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script src="lounge-booking.js"></script>
 </body>
 
