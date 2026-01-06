@@ -1,6 +1,11 @@
 pipeline {
     agent any
     
+    // Dropdown menu for choosing deployment environment
+    parameters {
+        choice(name: 'DEPLOY_NAME', choices: ['production', 'testing'], description: 'Choose the deployment environment')
+    }
+    
     tools {
         maven 'maven'
     }
@@ -10,7 +15,7 @@ pipeline {
         TOMCAT_USER = 'ubuntu'
         TOMCAT_WEBAPPS = '/var/lib/tomcat10/webapps'
         WAR_NAME = 'velvet.war'
-        DEPLOY_NAME = 'production'  // Change to 'testing' or 'production' as needed
+        // DEPLOY_NAME now comes from parameters (dropdown)
     }
     
     stages {
@@ -39,15 +44,15 @@ pipeline {
         stage('🚀 Deploy to Tomcat') {
             steps {
                 script {
-                    if (env.DEPLOY_NAME == 'production') {
-                        echo "🚀 Deploying to PRODUCTION environment as ${env.DEPLOY_NAME}.war..."
+                    if (params.DEPLOY_NAME == 'production') {
+                        echo "🚀 Deploying to PRODUCTION environment as ${params.DEPLOY_NAME}.war..."
                     } else {
-                        echo "🧪 Deploying to TESTING environment as ${env.DEPLOY_NAME}.war..."
+                        echo "🧪 Deploying to TESTING environment as ${params.DEPLOY_NAME}.war..."
                     }
                 }
                 
                 sh """
-                    scp -o StrictHostKeyChecking=no target/${WAR_NAME} ${TOMCAT_USER}@${TOMCAT_IP}:${TOMCAT_WEBAPPS}/${DEPLOY_NAME}.war
+                    scp -o StrictHostKeyChecking=no target/${WAR_NAME} ${TOMCAT_USER}@${TOMCAT_IP}:${TOMCAT_WEBAPPS}/${params.DEPLOY_NAME}.war
                 """
                 
                 echo '✅ Deployment completed successfully!'
@@ -60,9 +65,9 @@ pipeline {
                 sleep 15
                 
                 script {
-                    echo "🔍 Verifying deployment at http://${TOMCAT_IP}:8080/${DEPLOY_NAME}/"
+                    echo "🔍 Verifying deployment at http://${TOMCAT_IP}:8080/${params.DEPLOY_NAME}/"
                     sh """
-                        curl -I http://${TOMCAT_IP}:8080/${DEPLOY_NAME}/ || echo '⚠️ Deployment may need more time'
+                        curl -I http://${TOMCAT_IP}:8080/${params.DEPLOY_NAME}/ || echo '⚠️ Deployment may need more time'
                     """
                 }
             }
@@ -74,7 +79,7 @@ pipeline {
             echo '✅ ================================'
             echo '✅ PIPELINE COMPLETED SUCCESSFULLY!'
             echo '✅ ================================'
-            echo "🌐 Access your app at: http://${TOMCAT_IP}:8080/${DEPLOY_NAME}/"
+            echo "🌐 Access your app at: http://${TOMCAT_IP}:8080/${params.DEPLOY_NAME}/"
         }
         failure {
             echo '❌ ================================'
