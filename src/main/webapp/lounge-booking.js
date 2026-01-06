@@ -349,3 +349,109 @@ window.scrollToGallery = scrollToGallery;
 console.log('%c✨ The Velvet Lounge', 'color: #d4af37; font-size: 24px; font-weight: bold;');
 console.log('%cPremium Event Space Booking System', 'color: #b76e79; font-size: 14px;');
 console.log('%c\nTip: Generate a booking preview with: generateBookingReport()', 'color: #b8bec8; font-size: 12px;');
+
+// ============================================
+// PREMIUM ENHANCEMENTS - v3.0
+// ============================================
+
+// Initialize AOS (Animate On Scroll)  
+if (typeof AOS !== 'undefined') {
+    AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true,
+        offset: 100
+    });
+}
+
+// ============================================
+// Animated Counter
+// ============================================
+
+function animateCounter(element, target, duration = 2000) {
+    const start = 0;
+    const increment = target / (duration / 16);
+    let current = start;
+    
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            element.textContent = Math.ceil(target);
+            clearInterval(timer);
+        } else {
+            element.textContent = Math.ceil(current);
+        }
+    }, 16);
+}
+
+// Initialize counters when they come into view
+const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+            const target = parseInt(entry.target.dataset.count);
+            animateCounter(entry.target, target);
+            entry.target.classList.add('counted');
+        }
+    });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.count-up').forEach(counter => {
+    counterObserver.observe(counter);
+});
+
+// ============================================
+// Parallax Scrolling
+// ============================================
+
+function initParallax() {
+    const parallaxElements = document.querySelectorAll('.parallax-bg');
+    
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        
+        parallaxElements.forEach(el => {
+            const speed = 0.5;
+            const yPos = -(scrolled * speed);
+            el.style.transform = `translate3d(0, ${yPos}px, 0)`;
+        });
+    });
+}
+
+if ('IntersectionObserver' in window) {
+    initParallax();
+}
+
+// ============================================
+// Enhanced Button Interactions
+// ============================================
+
+// Add ripple effect to buttons
+document.querySelectorAll('.primary-btn, .secondary-btn, .pricing-btn').forEach(button => {
+    button.addEventListener('click', function(e) {
+        const ripple = document.createElement('span');
+        const rect = this.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        const x = e.clientX - rect.left - size / 2;
+        const y = e.clientY - rect.top - size / 2;
+        
+        ripple.style.width = ripple.style.height = size + 'px';
+        ripple.style.left = x + 'px';
+        ripple.style.top = y + 'px';
+        ripple.classList.add('ripple');
+        
+        this.appendChild(ripple);
+        
+        setTimeout(() => ripple.remove(), 600);
+    });
+});
+
+// ============================================
+// Performance Monitor (Debug)
+// ============================================
+
+console.log('%c🚀 Premium Features Loaded', 'color: #d4af37; font-size: 16px; font-weight: bold;');
+console.log('%c✨ Parallax Scrolling: Active','color: #56d364; font-size: 12px;' );
+console.log('%c🔢 Animated Counters: Active', 'color: #56d364; font-size: 12px;');
+console.log('%c🎬 AOS Animations: ' + (typeof AOS !== 'undefined' ? 'Active' : 'Disabled'), 
+    'color: ' + (typeof AOS !== 'undefined' ? '#56d364' : '#f85149') + '; font-size: 12px;');
+
