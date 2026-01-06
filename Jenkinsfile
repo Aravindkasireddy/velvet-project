@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     tools {
-        maven 'Maven'
+        maven 'maven'
     }
     
     environment {
@@ -23,7 +23,7 @@ pipeline {
         
         stage('🔨 Build') {
             steps {
-                echo '🔨 Building WAR file with Maven...'
+                echo '🔨 Building WAR file with maven...'
                 sh 'mvn clean package'
                 echo '✅ Build completed'
             }
